@@ -9,24 +9,27 @@
  */
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class tuan1 {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        // TODO code application logic here
-        
+    public static void main(String args[]) {   
         Scanner reader = new Scanner(System.in);
-        System.out.print("Nhap so nguyen duong n: ");
+        System.out.print("Nhập so nguyen duong n: ");
         try {
             int n = reader.nextInt();
-            bai1(n);
-            bai2(n);
-            bai3(n);
-            bai4(n);
+            //bai1(n);
+            //bai2(n);
+            //bai3(n);
+            //bai4(n);
+            //test();
         }
         catch (java.util.InputMismatchException e){
             System.out.print("ERROR!!! Nhap sai!!!");
@@ -123,16 +126,15 @@ public class tuan1 {
         HashMap<Integer, Integer> primeCount = new HashMap<Integer, Integer>();
         int count=0;
         for (int i=2; i<=n; i++){
-            if (isPrime(i)){
-                if (n%i==0){
-                    n=n/i;
-                    count+=1;
-                    primeCount.put(i,count);
-                    i-=1;
-                }
-                else
-                    count=0;
+            if (n%i==0){
+                n=n/i;
+                //count+=1;
+                //primeCount.put(i,count);
+                primeCount.put(i,primeCount.getOrDefault(i,0)+1);
+                i-=1;
             }
+            //else
+                //count=0;
         }
         System.out.print("Result: ");
         count=0;
@@ -145,5 +147,16 @@ public class tuan1 {
             System.out.print(key+"^"+primeCount.get(key)+"x");
         }
     }
-    
+   
+    public static void test(){
+        LinkedHashMap <Integer,Integer> linkedHashMap = new LinkedHashMap<>();
+        File f = new File("tuan1\\banking.txt");
+        try (Scanner sc = new Scanner(f)) {
+            String line = sc.nextLine();
+            StringTokenizer stringTokenizer = new StringTokenizer(line, ";");
+            linkedHashMap.put(Integer.parseInt(stringTokenizer.nextToken()), Integer.parseInt(stringTokenizer.nextToken()));
+        } catch (FileNotFoundException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 }
