@@ -56,8 +56,7 @@ public class App {
         }
         catch (IllegalArgumentException e){
             System.err.println(e.getMessage());
-        }
-        
+        }  
     }
 
     public static void bai2(){

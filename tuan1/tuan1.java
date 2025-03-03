@@ -140,7 +140,7 @@ public class tuan1 {
         count=0;
         for (int key : primeCount.keySet()){
             count+=1;
-            if (count==primeCount.size()){
+            if (count==primeCount.size()){ //nếu là phần tử cuối cùng
                 System.out.print(key+"^"+primeCount.get(key));
                 break;
             }
