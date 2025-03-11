@@ -1,0 +1,4 @@
+week;tuan
+day;ngay
+time;thoi gian
+month;thang

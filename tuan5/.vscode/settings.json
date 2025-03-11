@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\ADMIN\\Downloads\\jsoup-1.19.1.jar",
+        "c:\\Users\\ADMIN\\Downloads\\json-20230618.jar"
+    ]
+}

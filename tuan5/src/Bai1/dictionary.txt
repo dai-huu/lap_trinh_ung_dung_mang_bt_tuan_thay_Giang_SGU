@@ -1,0 +1,4 @@
+week;tuần
+day;ngày
+time;thoi gian
+month;thang
